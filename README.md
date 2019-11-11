@@ -362,6 +362,9 @@ Options:
 <a name="troubleshooting"></a>
 ## Troubleshooting
 
+### Cannot install, missing authorizations
+Some OS and containers will not be able to install wskdebug, because the installing user does not have the write authorizations to target folders. In that case, for Unix based system, run `sudo chown -R <<installing_user>> /usr/local/ && chmod -R u+x+w /usr/local/` and then install.
+
 ### Does not work, namespace shows as undefined
 
 Your `~/.wskprops` must include the correct `NAMESPACE` field. See [issue #3](https://github.com/adobe/wskdebug/issues/3).
